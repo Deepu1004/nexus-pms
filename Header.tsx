@@ -1,7 +1,7 @@
-import React from 'react';
-import { Search, Bell, Settings, CalendarDays } from 'lucide-react';
-import useAppStore from '../../store/appStore';
-import { format } from 'date-fns';
+import React from "react";
+import { Search, Bell, Settings, CalendarDays } from "lucide-react";
+import useAppStore from "./appStore";
+import { format } from "date-fns";
 
 const Header = () => {
   const { pageTitle } = useAppStore();
@@ -22,9 +22,9 @@ const Header = () => {
         {/* Search Bar */}
         <div className="relative hidden md:block">
           <Search className="absolute left-3 top-2.5 w-4 h-4 text-slate-500" />
-          <input 
-            type="text" 
-            placeholder="Search bookings, guests..." 
+          <input
+            type="text"
+            placeholder="Search bookings, guests..."
             className="w-64 bg-slate-900 border border-slate-700 rounded-full py-2 pl-10 pr-4 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
           />
         </div>
@@ -35,7 +35,7 @@ const Header = () => {
           <Bell className="w-5 h-5" />
           <span className="absolute top-2 right-2.5 w-2 h-2 bg-rose-500 rounded-full border border-slate-900"></span>
         </button>
-        
+
         <button className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">
           <Settings className="w-5 h-5" />
         </button>

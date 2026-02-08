@@ -1,19 +1,19 @@
-import React from 'react';
-import { HashRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import { Loader2 } from 'lucide-react';
-import Sidebar from './components/Layout/Sidebar';
-import Header from './components/Layout/Header';
+import React from "react";
+import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { Loader2 } from "lucide-react";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 // Pages
-import Dashboard from './pages/Dashboard';
-import Rooms from './pages/Rooms';
-import Bookings from './pages/Bookings';
-import Guests from './pages/Guests';
-import Revenue from './pages/Revenue';
-import Login from './pages/Login';
+import Dashboard from "./Dashboard";
+import Rooms from "./Rooms";
+import Bookings from "./Bookings";
+import Guests from "./Guests";
+import Revenue from "./Revenue";
+import Login from "./Login";
 
 // Hooks
-import { useAuth } from './hooks/useAuth';
+import { useAuth } from "./hooks/useAuth";
 
 const Layout = () => {
   return (
@@ -51,7 +51,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        
+
         <Route element={<ProtectedRoute />}>
           <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
@@ -61,7 +61,7 @@ function App() {
             <Route path="/revenue" element={<Revenue />} />
           </Route>
         </Route>
-        
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
